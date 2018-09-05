@@ -1,6 +1,13 @@
 {
     "name": "Floating Twitch",
+    "description": "Open Twitch streams as a floating, always on top, bezel-less window screen.",    
     "version": "1.0",
-    "description": "Open Twitch streams as a floating, always on top, bezel less window screen.",
-    "manifest_version": 2
+    "manifest_version": 2,
+    "app":
+    {
+        "background":
+        {
+          "scripts": ["background.js"]
+        }
+    }
 }
