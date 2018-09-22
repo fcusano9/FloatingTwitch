@@ -20,6 +20,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+function enlargeWindow(){
+	var newWidth = Math.round(appWindow.innerBounds.width * 1.03),
+	newHeight = Math.round(newWidth * (9 / 16));
+
+	appWindow.innerBounds.width = newWidth;
+	appWindow.innerBounds.height = newHeight;
+}
+
+function shrinkWindow(){
+	var newWidth = Math.round(appWindow.innerBounds.width / 1.03),
+	newHeight = Math.round(newWidth * (9 / 16));
+
+	appWindow.innerBounds.width = newWidth;
+	appWindow.innerBounds.height = newHeight;
+}
 
 var appWindow = chrome.app.window.current();
 
@@ -39,19 +54,3 @@ appWindow.contentWindow.document.addEventListener("keydown", function(event) {
 		shrinkWindow();
 	}
 });
-
-function enlargeWindow(){
-	var newWidth = Math.round(appWindow.innerBounds.width * 1.03),
-	newHeight = Math.round(newWidth * (9 / 16));
-
-	appWindow.innerBounds.width = newWidth;
-	appWindow.innerBounds.height = newHeight;
-}
-
-function shrinkWindow(){
-	var newWidth = Math.round(appWindow.innerBounds.width / 1.03),
-	newHeight = Math.round(newWidth * (9 / 16));
-
-	appWindow.innerBounds.width = newWidth;
-	appWindow.innerBounds.height = newHeight;
-}
