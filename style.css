@@ -1,4 +1,16 @@
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
 
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
 
 .drag-bar {
 	position: absolute;
@@ -6,6 +18,6 @@
 	top: 0px;
 	width: 100%;
 	height: 32px;
-	background-color: #7a7c7c;
+	background-color: transparent;
 	-webkit-app-region: drag;
   }
