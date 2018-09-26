@@ -1,5 +1,5 @@
 {
-	"name": "Floating Twitch",
+	"name": "FloatingTwitch",
 	"description": "Open Twitch streams as a floating, always on top, bezel-less window screen.",    
 	"version": "1.0",
 	"manifest_version": 2,

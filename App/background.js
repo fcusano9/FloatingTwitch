@@ -21,6 +21,8 @@
 // SOFTWARE.
 
 
+var appWindow;
+
 chrome.app.runtime.onLaunched.addListener(function() {
 	chrome.app.window.create("window.html", {
 		frame: "none",
@@ -32,4 +34,39 @@ chrome.app.runtime.onLaunched.addListener(function() {
 		},
 		resizable: false
 	});
+});
+
+function enlargeWindow(){
+	var newWidth = Math.round(appWindow.innerBounds.width * 1.03),
+	newHeight = Math.round(newWidth * (9 / 16));
+
+	appWindow.innerBounds.width = newWidth;
+	appWindow.innerBounds.height = newHeight;
+}
+
+function shrinkWindow(){
+	var newWidth = Math.round(appWindow.innerBounds.width / 1.03),
+	newHeight = Math.round(newWidth * (9 / 16));
+
+	appWindow.innerBounds.width = newWidth;
+	appWindow.innerBounds.height = newHeight;
+}
+
+appWindow.contentWindow.document.addEventListener("keydown", function(event) {
+	var appWindow = chrome.app.window.current();
+
+	// Close window
+	if (event.keyCode === 88) { // 'x' key
+		appWindow.close();
+	}
+	
+	// Make window larger by 3%
+	if (event.keyCode === 107) { // '+' key
+		enlargeWindow();
+	}
+
+	// Make window smaller by 3%
+	if (event.keyCode === 109) { // '-' key
+		shrinkWindow();
+	}
 });
