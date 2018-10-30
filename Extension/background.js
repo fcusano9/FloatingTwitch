@@ -13,6 +13,7 @@ function createWindow(tab) {
 	})
 }
 
+// event that is triggered when extension icon is clicked
 chrome.pageAction.onClicked.addListener(createWindow)
 
 
