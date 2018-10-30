@@ -32,6 +32,12 @@ SOFTWARE.
 	</head>
 	<body>
 		<div class="drag-bar"></div>
+
+		<form action="/action_page.php">
+			Twitch Channel: <input type="text" name="channel"><br>
+			<input type="submit" value="Go!">
+		</form>
+
 		<webview id="webview" src="https://player.twitch.tv/?channel=ninja&muted=false" style="width:100%; height:100%"></webview>
 	</body>
 </html>

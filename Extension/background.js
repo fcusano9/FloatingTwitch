@@ -1,16 +1,46 @@
 
 
 // ANCHOR This is when the extension icon is clicked
-chrome.pageAction.onClicked.addListener(function(tab) {
+function createWindow(tab) {
 	chrome.windows.create({
 		url: "window.html",
 		type: "popup",
+		focused: true,
 		width: 600,
 		height: 338,
 		left: 100,
 		top: 100
-	});
-});
+	})
+}
+
+chrome.pageAction.onClicked.addListener(createWindow)
+
+
+// chrome.pageAction.onClicked.addListener(function(tab) {
+// 	chrome.windows.create({
+// 		url: "window.html",
+// 		type: "popup",
+// 		focused: true,
+// 		width: 600,
+// 		height: 338,
+// 		left: 100,
+// 		top: 100
+// 	}, function(window) {
+		
+// 		var iframe = document.createElement('iframe');
+
+// 		var tablink;
+// 		chrome.tabs.getSelected(null, function(tab) {
+// 			tablink = tab.url;
+// 		});
+
+// 		iframe.src = tablink;
+
+// 		iframe.style.cssText = 'width:100%; height:100%';
+
+// 		document.body.appendChild(iframe);
+// 	});
+// });
 
 chrome.runtime.onInstalled.addListener(function() {
     chrome.storage.sync.set({color: '#3aa757'}, function() {
