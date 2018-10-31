@@ -1,6 +1,6 @@
 
 
-// ANCHOR This is when the extension icon is clicked
+// This is when the extension icon is clicked
 function createWindow(tab) {
 	chrome.windows.create({
 		url: "window.html",
@@ -13,8 +13,21 @@ function createWindow(tab) {
 	})
 }
 
-// event that is triggered when extension icon is clicked
+// Event that is triggered when extension icon is clicked
 chrome.pageAction.onClicked.addListener(createWindow)
+
+
+// Makes extension active when on twitch or youtube
+chrome.declarativeContent.onPageChanged.addRules([
+	{
+		conditions: [new chrome.declarativeContent.PageStateMatcher({ pageUrl: {hostEquals: 'www.twitch.tv'} })],
+		actions: [new chrome.declarativeContent.ShowPageAction()]
+	},
+	{
+		conditions: [new chrome.declarativeContent.PageStateMatcher({ pageUrl: {hostEquals: 'www.youtube.com'} })],
+		actions: [new chrome.declarativeContent.ShowPageAction()]
+	}
+]);
 
 
 // chrome.pageAction.onClicked.addListener(function(tab) {
@@ -43,26 +56,10 @@ chrome.pageAction.onClicked.addListener(createWindow)
 // 	});
 // });
 
-chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.sync.set({color: '#3aa757'}, function() {
-		console.log("The color is green.");
-	});
-
-	// Makes extension active when on twitch
-	chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-		chrome.declarativeContent.onPageChanged.addRules([{
-			conditions: [new chrome.declarativeContent.PageStateMatcher({
-				pageUrl: {hostEquals: 'www.twitch.tv'},
-			})
-			],
-			actions: [new chrome.declarativeContent.ShowPageAction()]
-		}]);
-	});
-});
 
 // Run a page script, I might not need this
 // changeColor.onclick = function(element) {
-// 	let color = element.target.value;
+// 	let color = element.target.value; m
 // 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 // 		chrome.tabs.executeScript(
 // 			tabs[0].id,

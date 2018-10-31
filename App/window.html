@@ -28,16 +28,20 @@ SOFTWARE.
 	<head>
 		<title>Frameless Window</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
-		<script src="window.js"></script>
 	</head>
 	<body>
 		<div class="drag-bar"></div>
 
-		<form action="/action_page.php">
-			Twitch Channel: <input type="text" name="channel"><br>
-			<input type="submit" value="Go!">
-		</form>
+		<div id="inputForm">
+			<form action="/action_page.php">
+				Twitch Channel: <input id="channel" type="text"><br>
+				<input type="submit" value="Go!">
+			</form>
+		</div>
 
 		<webview id="webview" src="https://player.twitch.tv/?channel=ninja&muted=false" style="width:100%; height:100%"></webview>
+
+
+		<script src="window.js"></script>
 	</body>
 </html>
