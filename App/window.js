@@ -1,5 +1,4 @@
 
-
 // Subscribe to click event of the submit button
 document.getElementById("submitButton").addEventListener("click", function(){
 
@@ -10,6 +9,12 @@ document.getElementById("submitButton").addEventListener("click", function(){
 
 	// Set the source of the webview to the twitch channel
 	webview.src = "https://player.twitch.tv/?channel=" + channel.value;
+
+	webview.addEventListener('permissionrequest', function(e) {
+		if (e.permission === 'fullscreen') {
+			e.request.allow();
+		}
+	});
 
 	// Hide the form and show the webview
 	inputForm.style.display = "none";
