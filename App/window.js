@@ -1,36 +1,37 @@
-// MIT License
-
-// Copyright (c) 2018 Frank Cusano
-
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
 
 
-function hideForm() {
-	var x = document.getElementById("inputForm");
+// Subscribe to click event of the submit button
+document.getElementById("submitButton").addEventListener("click", function(){
 
-	x.style.display = "none";
+	// Get the elements that are needed
+	var channel = document.getElementById("channel");
+	var webview = document.getElementById("webview");
+	var inputForm = document.getElementById("inputForm");
 
-    // if (x.style.display === "none") {
-    //     x.style.display = "block";
-    // } else {
-    //     x.style.display = "none";
-    // }
-}
+	// Set the source of the webview to the twitch channel
+	webview.src = "https://player.twitch.tv/?channel=" + channel.value;
 
-hideForm();
+	// Hide the form and show the webview
+	inputForm.style.display = "none";
+	webview.style.display = "initial";
+});
+
+
+document.getElementById("webview").addEventListener("keydown", function(){
+
+	// Close window
+	if (event.keyCode === 88) { // 'x' key
+		appWindow.close();
+	}
+			
+	// Make window larger by 3%
+	if (event.keyCode === 107 || event.keyCode === 187) { // '+' key
+		enlargeWindow(appWindow);
+	}
+		
+	// Make window smaller by 3%
+	if (event.keyCode === 109 || event.keyCode === 189) { // '-' key
+		shrinkWindow(appWindow);
+	}
+
+});

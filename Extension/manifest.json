@@ -1,9 +1,8 @@
-
 {
 	"name": "FloatingTwitch Extension",
 	"version": "1.0",
 	"description": "Open Twitch streams as a floating, always on top, bezel-less window screen.",
-	"permissions": ["activeTab", "declarativeContent", "storage"],
+	"permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
 	"background": {
 		"scripts": ["background.js"],
 		"persistent": false

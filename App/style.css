@@ -1,15 +1,15 @@
 html {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
 }
 
 body {
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
 }
 
 .drag-bar {
@@ -20,4 +20,4 @@ body {
 	height: 32px;
 	background-color: transparent;
 	-webkit-app-region: drag;
-  }
+}

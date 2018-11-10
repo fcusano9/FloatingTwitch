@@ -1,16 +1,29 @@
 
-
 chrome.windows.onCreated.addListener(function() {
-	var iframe = document.createElement('iframe');
+
+
+	console.log('This is a motherfucking test bruuther')
+
+
+
+	var iframe = document.getElementById('webview');
 
 	// var tablink;
 	// chrome.tabs.getSelected(null, function(tab) {
 	// 	tablink = tab.url;
 	// });
 
-	iframe.src = 'https://google.com';
 
-	iframe.style.cssText = 'width:100%; height:100%';
+	chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+		var url = tabs[0].url;
 
-	document.body.appendChild(iframe);
+		iframe.src = url;
+
+
+		chrome.tabs.query()
+
+		console.log(url)
+	});
+
+
 })

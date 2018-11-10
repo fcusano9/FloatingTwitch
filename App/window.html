@@ -1,28 +1,3 @@
-<!--
-MIT License
-
-Copyright (c) 2018 Frank Cusano
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
--->
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -30,18 +5,19 @@ SOFTWARE.
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
+		<!-- Invisible bar that allows for dragging -->
 		<div class="drag-bar"></div>
 
-		<div id="inputForm">
-			<form action="/action_page.php">
+		<!-- Input for Twitch channel name -->
+		<div id="inputForm" style="margin:40px">
+			<form>
 				Twitch Channel: <input id="channel" type="text"><br>
-				<input type="submit" value="Go!">
+				<input id="submitButton" type="submit" value="Go!" />
 			</form>
 		</div>
 
-		<webview id="webview" src="https://player.twitch.tv/?channel=ninja&muted=false" style="width:100%; height:100%"></webview>
-
-
-		<script src="window.js"></script>
+		<!-- Webview of stream -->
+		<webview id="webview" style="width:100%; height:100%; display: none"></webview>
 	</body>
+	<script src="window.js"></script>
 </html>

@@ -1,8 +1,7 @@
 
-
 // This is when the extension icon is clicked
 function createWindow(tab) {
-	chrome.windows.create({
+	var window = chrome.windows.create({
 		url: "window.html",
 		type: "popup",
 		focused: true,
