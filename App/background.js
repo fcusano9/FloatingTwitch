@@ -1,3 +1,4 @@
+/*global chrome*/
 
 function enlargeWindow(appWindow){
 	var newWidth = Math.round(appWindow.innerBounds.width * 1.03),

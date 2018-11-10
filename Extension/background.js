@@ -1,3 +1,4 @@
+/*global chrome*/
 
 // This is when the extension icon is clicked
 function createWindow(tab) {
@@ -9,21 +10,21 @@ function createWindow(tab) {
 		height: 338,
 		left: 100,
 		top: 100
-	})
+	});
 }
 
 // Event that is triggered when extension icon is clicked
-chrome.pageAction.onClicked.addListener(createWindow)
+chrome.pageAction.onClicked.addListener(createWindow);
 
 
 // Makes extension active when on twitch or youtube
 chrome.declarativeContent.onPageChanged.addRules([
 	{
-		conditions: [new chrome.declarativeContent.PageStateMatcher({ pageUrl: {hostEquals: 'www.twitch.tv'} })],
+		conditions: [new chrome.declarativeContent.PageStateMatcher({ pageUrl: {hostEquals: "www.twitch.tv"} })],
 		actions: [new chrome.declarativeContent.ShowPageAction()]
 	},
 	{
-		conditions: [new chrome.declarativeContent.PageStateMatcher({ pageUrl: {hostEquals: 'www.youtube.com'} })],
+		conditions: [new chrome.declarativeContent.PageStateMatcher({ pageUrl: {hostEquals: "www.youtube.com"} })],
 		actions: [new chrome.declarativeContent.ShowPageAction()]
 	}
 ]);
