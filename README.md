@@ -1,5 +1,6 @@
 # FloatingTwitch ![logo]
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9355d67f0ca948e0aaa182524a8d8eea)](https://www.codacy.com/app/frank.cusano9/FloatingTwitch?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fcusano9/FloatingTwitch&amp;utm_campaign=Badge_Grade)
+[![DUB](https://img.shields.io/dub/l/vibe-d.svg)](https://github.com/fcusano9/FloatingTwitch/blob/master/LICENSE)
 
 Open Twitch streams as a floating, always on top, bezel less window screen.
 
@@ -25,12 +26,12 @@ Open Twitch streams as a floating, always on top, bezel less window screen.
 ## Keyboard Commands
 
 | Command                 | Key Binding  |
-| ------------------------|--------------|
+|-------------------------|--------------|
 | Increase window size    | '+' or '='   |
 | Decrease window size    | '-'          |
+| Move window             | arrow keys   |
 | Close window            | 'x'          |
 
-<!--| Move window             | arrow keys   | -->
 <!--| Toggle "always-on-top"  | 'a'          | -->
 
 ## Known Issues
@@ -39,7 +40,6 @@ All bugs can be found [here][issues]. If you find a bug or think a new feature w
 
 
 [proposal]: https://docs.google.com/document/d/1vZcIwQb57SDxl5FSRnGhnvY34vCmw6Ggg1762NrcfIY/edit?usp=sharing
-
 [issues]: https://github.com/fcusano9/FloatingTwitch/issues
 
 [logo]: App/images/logo32.png

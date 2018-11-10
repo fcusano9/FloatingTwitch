@@ -31,18 +31,35 @@ chrome.app.runtime.onLaunched.addListener(function() {
 			// var appWindow = chrome.app.window.current();
 		
 			// Close window
-			if (event.keyCode === 88) { // 'x' key
+			if (event.keyCode === 88) { // 'x'
 				appWindow.close();
 			}
 			
 			// Make window larger by 3%
-			if (event.keyCode === 107 || event.keyCode === 187) { // '+' key
+			if (event.keyCode === 107 || event.keyCode === 187) { // '+'
 				enlargeWindow(appWindow);
 			}
 		
 			// Make window smaller by 3%
-			if (event.keyCode === 109 || event.keyCode === 189) { // '-' key
+			if (event.keyCode === 109 || event.keyCode === 189) { // '-'
 				shrinkWindow(appWindow);
+			}
+
+			// Move window by 10 in the specified direction
+			if (event.keyCode === 37) { // '<'
+				appWindow.outerBounds.left -= 10;
+			}
+
+			if (event.keyCode === 38) { // '^'
+				appWindow.outerBounds.top -= 10;
+			}
+
+			if (event.keyCode === 39) { // '>'
+				appWindow.outerBounds.left += 10;
+			}
+
+			if (event.keyCode === 40) { // 'v'
+				appWindow.outerBounds.top += 10;
 			}
 		});
 	});
