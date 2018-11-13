@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Frameless Window</title>
+		<title>Floating Twitch</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
@@ -9,15 +9,16 @@
 		<div class="drag-bar"></div>
 
 		<!-- Input for Twitch channel name -->
-		<div id="inputForm" style="margin:40px">
-			<form>
+		<div class="form-div" id="inputForm">
+			<form class="form">
 				Twitch Channel: <input id="channel" type="text"><br>
 				<input id="submitButton" type="submit" value="Go!" />
 			</form>
 		</div>
 
 		<!-- Webview of stream -->
-		<webview id="webview" style="width:100%; height:100%; display: none"></webview>
+		<webview id="webview"></webview>
+
+		<script src="window.js"></script>
 	</body>
-	<script src="window.js"></script>
 </html>
