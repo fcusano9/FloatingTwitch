@@ -5,8 +5,19 @@
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
-		<div class="drag-bar"></div>
-		<iframe id="webview" src="https://player.twitch.tv/?channel=ninja&muted=false" style="width:100%; height:100%"></iframe>
+
+
+
+		<!-- Input for Twitch channel name -->
+		<div class="form-div" id="inputForm">
+			<form class="form">
+				Twitch Channel: <input id="channel" type="text"><br>
+				<input id="submitButton" type="submit" value="Go!" />
+			</form>
+		</div>
+
+		<!-- Webview of stream -->
+		<!-- <iframe id="webview" src="https://player.twitch.tv/?channel=ninja&muted=false"></iframe> -->
 
 		<script src="window.js"></script>
 	</body>
