@@ -15,6 +15,7 @@
 	},
 	"permissions": [
 		"webview",
+		"app.window",
 		"app.window.alwaysOnTop",
 		"fullscreen"
 	]
